@@ -10,7 +10,9 @@ namespace Test {
     internal class Program {
         static void Main(string[] args) {
             Libro libro = new Libro("nana", "autor", 1249, "12313s", "46871234465", 456);
+            Mapa mapa = new Mapa("nana", "autor", 1249, "12313s", "46871234465", 15, 10);
             Console.WriteLine(libro);
+            Console.WriteLine(mapa);
             Console.ReadKey();
         }
     }
