@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Documento.cs" />
+    <Compile Include="Escaner.cs" />
     <Compile Include="Libro.cs" />
     <Compile Include="Mapa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
