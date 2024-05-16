@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades {
-    abstract class Documento {
+    public class Documento {
         int anio;
         string autor, barcode, numNormalizado, titulo;
         Paso estado;
