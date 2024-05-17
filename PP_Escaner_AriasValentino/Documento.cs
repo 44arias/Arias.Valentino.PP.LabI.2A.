@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades {
-    public class Documento {
+
+    public abstract class Documento {
         int anio;
         string autor, barcode, numNormalizado, titulo;
         Paso estado;
@@ -80,6 +81,7 @@ namespace Entidades {
             sb.AppendLine($"Año: {this.anio}");
             sb.AppendLine($"NumNormalizado: {this.numNormalizado}");
             sb.AppendLine($"Barcode: {this.barcode}");
+            sb.AppendLine($"Estado: {estado}"); 
             return sb.ToString();
         }
     }

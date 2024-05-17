@@ -23,19 +23,19 @@ namespace Entidades {
             mapa
         }
 
-        List<Documento> ListaDocumentos {
+        public List<Documento> ListaDocumentos {
             get => listaDocumentos;
         }
 
-        Departamento Location {
+        public Departamento Location {
             get => location;
         }
 
-        string Marca {
+        public string Marca {
             get => marca;
         }
 
-        TipoDoc Tipo {
+        public TipoDoc Tipo {
             get => tipo;
         }
 
@@ -44,8 +44,7 @@ namespace Entidades {
                 int index = listaDocumentos.IndexOf(d);
                 bool exito = listaDocumentos[index].AvanzarEstado();
                 return exito;
-            }
-            else {
+            } else {
                 return false;
             }
         }
