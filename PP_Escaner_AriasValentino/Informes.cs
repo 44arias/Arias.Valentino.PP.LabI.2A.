@@ -20,13 +20,8 @@ namespace PP_Escaner_AriasValentino {
             foreach (Documento doc in e.ListaDocumentos) {
                 if (doc.Estado == estado) {
                     cantidad++;
-                    if (doc is Libro libro) {
-                        extension += libro.NumPaginas;
-                        sb.AppendLine(libro.ToString());
-                    } else if (doc is Mapa mapa) {
-                        extension += (int)mapa.Superficie;
-                        sb.AppendLine(mapa.ToString());
-                    }
+                    sb.AppendLine(doc.ToString());
+                    extension += (doc is Libro libro) ? libro.NumPaginas : (doc is Mapa mapa) ? (int)mapa.Superficie : 0;
                 }
             }
 

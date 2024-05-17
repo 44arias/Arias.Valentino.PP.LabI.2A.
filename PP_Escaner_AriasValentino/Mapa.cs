@@ -37,15 +37,7 @@ namespace Entidades {
         }
 
         public override string ToString() {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"Título: {Titulo}");
-            sb.AppendLine($"Autor: {Autor}");
-            sb.AppendLine($"Año: {Anio}");
-            sb.AppendLine($"Cód. de barras: {Barcode}");
-            sb.AppendLine($"Superficie: {this.alto} * {this.ancho} = {Superficie} cm2");
-
-            return sb.ToString();
+            return base.ToString();
         }
     }
 }

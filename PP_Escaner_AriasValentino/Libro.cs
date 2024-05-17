@@ -34,16 +34,7 @@ namespace PP_Escaner_AriasValentino {
         }
 
         public override string ToString() {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"Título: {Titulo}");
-            sb.AppendLine($"Autor: {Autor}");
-            sb.AppendLine($"Año: {Anio}");
-            sb.AppendLine($"ISBN: {ISBN}");
-            sb.AppendLine($"Cód. de barras: {Barcode}");
-            sb.AppendLine($"Número de páginas: {NumPaginas}");
-
-            return sb.ToString();
+            return base.ToString(); 
         }
     }
 }

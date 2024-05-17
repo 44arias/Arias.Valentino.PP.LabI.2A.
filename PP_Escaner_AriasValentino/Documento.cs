@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PP_Escaner_AriasValentino;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,7 @@ namespace Entidades {
                     this.estado = Paso.Distribuido;
                     break;
                 case Paso.Distribuido:
-                    this.estado = Paso.EnEscaner; 
+                    this.estado = Paso.EnEscaner;
                     break;
                 case Paso.EnEscaner:
                     this.estado = Paso.EnRevision;
@@ -74,15 +75,18 @@ namespace Entidades {
         }
 
         public override string ToString() {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("DOCUMENTO:");
-            sb.AppendLine($"Título: {this.titulo}");
-            sb.AppendLine($"Autor: {this.autor}");
-            sb.AppendLine($"Año: {this.anio}");
-            sb.AppendLine($"NumNormalizado: {this.numNormalizado}");
-            sb.AppendLine($"Barcode: {this.barcode}");
-            sb.AppendLine($"Estado: {estado}"); 
-            return sb.ToString();
+            StringBuilder text = new StringBuilder();
+            text.AppendLine($"Título: {this.titulo}");
+            text.AppendLine($"Autor: {this.autor}");
+            text.AppendLine($"Año: {this.anio}");
+
+            if (this is Libro) {
+                text.AppendLine($"ISBN: {NumNormalizado}");
+            }
+
+            text.AppendLine($"Cód. de barras: {this.barcode}");
+            text.AppendLine((this is Libro libro) ? $"Número de páginas: {libro.NumPaginas}" : (this is Mapa mapa) ? $"Superficie: {mapa.Alto} * {mapa.Ancho} = {mapa.Superficie} cm2" : "");
+            return text.ToString();
         }
     }
 }

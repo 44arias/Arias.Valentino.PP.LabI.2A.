@@ -44,7 +44,8 @@ namespace Entidades {
                 int index = listaDocumentos.IndexOf(d);
                 bool exito = listaDocumentos[index].AvanzarEstado();
                 return exito;
-            } else {
+            }
+            else {
                 return false;
             }
         }
@@ -66,7 +67,7 @@ namespace Entidades {
 
         public static Escaner operator +(Escaner e, Documento d) {
             if (e != d && d.Estado == Documento.Paso.Inicio) {
-                d.AvanzarEstado(); 
+                d.AvanzarEstado();
                 e.listaDocumentos.Add(d);
             }
             return e;
