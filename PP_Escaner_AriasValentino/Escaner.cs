@@ -39,16 +39,7 @@ namespace Entidades {
             get => tipo;
         }
 
-        public bool CambiarEstadoDocumento(Documento d) {
-            if (listaDocumentos.Contains(d)) {
-                int index = listaDocumentos.IndexOf(d);
-                bool exito = listaDocumentos[index].AvanzarEstado();
-                return exito;
-            }
-            else {
-                return false;
-            }
-        }
+        public bool CambiarEstadoDocumento(Documento d) => listaDocumentos.Contains(d) ? listaDocumentos[listaDocumentos.IndexOf(d)].AvanzarEstado() : false;
 
         public Escaner(string marca, TipoDoc tipo) {
             this.marca = marca;

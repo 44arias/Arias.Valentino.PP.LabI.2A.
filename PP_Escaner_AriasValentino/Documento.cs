@@ -45,11 +45,9 @@ namespace Entidades {
         }
 
         public bool AvanzarEstado() {
-            if (this.estado == Paso.Terminado) {
-                return false;
-            }
-
             switch (this.estado) {
+                case Paso.Terminado:
+                    return false;
                 case Paso.Inicio:
                     this.estado = Paso.Distribuido;
                     break;
