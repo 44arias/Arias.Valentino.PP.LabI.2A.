@@ -13,8 +13,28 @@ namespace PP_Escaner_AriasValentino {
 
             Mapa miMapa = new Mapa("titulo mapa", "autorx mapa", 4444, "444-44-444-4444-4 mapa", "4444mapa", 44, 44);
 
-            Console.WriteLine(miLibro);
-            Console.WriteLine(miMapa);
+            Escaner escanerLibros = new Escaner("", Escaner.TipoDoc.libro);
+            Escaner escanerMapas = new Escaner("Marca2", Escaner.TipoDoc.mapa);
+
+            escanerLibros += miLibro;
+            escanerMapas += miMapa;
+
+            int extension, cantidad;
+            string resumen;
+
+            Informes.MostrarDistribuidos(escanerLibros, out extension, out cantidad, out resumen);
+            Console.WriteLine("Informe de libros distribuidos:");
+            Console.WriteLine($"Extensión total: {extension} páginas");
+            Console.WriteLine($"Cantidad de libros: {cantidad}");
+            Console.WriteLine("Resumen:");
+            Console.WriteLine(resumen);
+
+            Informes.MostrarDistribuidos(escanerMapas, out extension, out cantidad, out resumen);
+            Console.WriteLine("\nInforme de mapas distribuidos:");
+            Console.WriteLine($"Extensión total: {extension} cm2");
+            Console.WriteLine($"Cantidad de mapas: {cantidad}");
+            Console.WriteLine("Resumen:");
+            Console.WriteLine(resumen);
             Console.ReadKey();
         }
     }

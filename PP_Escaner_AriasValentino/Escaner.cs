@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PP_Escaner_AriasValentino;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,7 +58,7 @@ namespace Entidades {
         }
 
         public static Escaner operator +(Escaner e, Documento d) {
-            if (e != d && d.Estado == Documento.Paso.Inicio) {
+            if (e != d && d.Estado == Documento.Paso.Inicio && e.Tipo == (d is Libro ? TipoDoc.libro : TipoDoc.mapa)) {
                 d.AvanzarEstado();
                 e.listaDocumentos.Add(d);
             }
