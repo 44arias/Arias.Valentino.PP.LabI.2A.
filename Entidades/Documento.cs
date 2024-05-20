@@ -1,12 +1,10 @@
-﻿using PP_Escaner_AriasValentino;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades {
-
     public abstract class Documento {
         int anio;
         string autor, barcode, numNormalizado, titulo;
