@@ -39,7 +39,7 @@ namespace Entidades {
             foreach (Documento doc in e.ListaDocumentos) {
                 if (doc.Estado == estado) {
                     cantidad++;
-                    sb.AppendLine(doc.ToString());
+                    sb.Append(doc.ToString());
                     extension += (doc is Libro libro) ? libro.NumPaginas : (doc is Mapa mapa) ? (int)mapa.Superficie : 0;
                 }
             }
